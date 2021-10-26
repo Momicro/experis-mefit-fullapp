@@ -1,0 +1,15 @@
+.card {
+    width:100%;
+    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+    border-radius: 5px;
+    backdrop-filter: blur(14px);
+    background-color: white;
+    padding: 10px;
+    height: 400px;
+    display: inline;
+    float: left;
+  }
+  
+.container {
+    height: 800px;
+}

@@ -1,0 +1,19 @@
+<div class="month">
+  <div>{{currentDate | date: 'MMMM'}}<br><span style="font-size:18px">{{currentDate | date: 'yyyy'}}</span></div>
+  <div class="horizontal">
+    <ul class="days" *ngFor="let day of calendarArray" >
+      <div class="calender-column" [class.active]="day.getTime() == currentDate.getTime()">
+        <li>{{day | date:'E'}}</li><br>
+        <li>{{day | date:'d'}} </li>
+      </div>
+    </ul>
+  </div>
+</div>
+
+<!-- TODO below -> connect with backend-->
+<div class="selection">
+  <button routerLink="/goals/set">Set new goals</button>
+</div>
+
+
+<goal-detail [goal] = "currentGoal"></goal-detail>

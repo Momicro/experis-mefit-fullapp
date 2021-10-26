@@ -1,0 +1,58 @@
+<div class="container">
+  <nav>  <!--If User is logged in-->
+    <div class="tabs">
+      <div class="tab">
+        <a routerLink="/dashboard">
+          <button class="tab-btn" routerLink="/dashboard">Dashboard</button>
+        </a>
+      </div>
+      <div class="tab">
+        <div class="tab-dropdown">
+          <button class="tab-dropbtn">Goals</button>
+          <div class="tab-dropdown-content">
+            <a routerLink="/goals">View</a>
+            <a routerLink="/goals/set">Set</a>
+          </div>
+        </div></div>
+      <div class="tab">
+        <div class="tab-dropdown">
+          <button class="tab-dropbtn">Views</button>
+          <div class="tab-dropdown-content">
+            <a routerLink="/programs">Programs</a>
+            <a routerLink="/workouts">Workouts</a>
+            <a routerLink="/exercises">Excercises</a>
+          </div>
+        </div>
+      </div>
+
+      <!--If User is Contributor-->
+      <div class="tab" *ngIf="hasRole('Contributor')">
+        <div class="tab-dropdown">
+          <button class="tab-dropbtn">Contributor</button>
+          <div class="tab-dropdown-content">
+            <a routerLink="/programs/contributor">Edit Programs</a>
+            <a routerLink="/workouts/contributor">Edit Workouts</a>
+            <a routerLink="/excercises/contributor">Edit Excercises</a>
+          </div>
+        </div>
+      </div>
+
+      <!--If User is Admin-->
+      <div class="tab" *ngIf="hasRole('Administrator')">
+        <button class="tab-btn" routerLink="/admin">Admin</button>
+      </div>
+
+      <div class="tab">
+        <a routerLink="/profile">
+          <button class="tab-btn">Profil</button>
+        </a>
+      </div>
+      <div class="tab">
+        <button class="tab-btn" href="javascript:void(null);" (click)="Logout()">Logout</button>
+      </div>
+    </div>
+  </nav>
+  <main class="main">
+    <router-outlet></router-outlet>
+  </main>
+</div>

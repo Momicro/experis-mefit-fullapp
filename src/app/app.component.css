@@ -1,0 +1,66 @@
+.container {
+  background-image: url("/assets/background_image.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+  background-position:center;
+}
+
+/*Styling of the content loaded in the applicationfram*/
+.main{
+  padding:3%;
+}
+/* Dropdown Button */
+.tab-dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.tab {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.tab-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.tab-dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.tab-dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.tab-dropdown:hover .tab-dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.tab-dropdown:hover .tab-dropbtn {background-color: black;}
+
+/*Other Button styling*/
+.tab-btn {
+  background:transparent;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+/* Change the background color of the button when hovering over */
+.tab:hover .tab-btn {background-color: black;}
+
+

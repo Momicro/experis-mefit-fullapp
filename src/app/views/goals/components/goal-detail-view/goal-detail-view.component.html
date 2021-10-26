@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-header">
+    <h1 >Goal {{currentGoal.id}}</h1> <h2>{{goal.startDate | date}} to {{goal.endDate | date}}</h2>
+    <div>{{this.daysLeft(goal.endDate)}} days left to achieve your current goal</div>
+  </div>
+  <div class="w3-light-grey w3-round-xlarge">
+    <div id="selected-goal-progress" class="w3-container w3-green w3-round-xlarge" [ngStyle]="{'width' : progressBarStyling()}">
+      {{progressBarStyling()}}
+      <p *ngIf="this.daysLeft(goal.endDate)>0">{{this.daysLeft(goal.endDate)}} days left</p>
+      <p *ngIf="this.daysLeft(goal.endDate)<0">done</p>
+    </div>
+  </div>
+  <div class="container body">
+    <div class="container">
+      <div class="container">
+        <h2>Units:<button (click)="viewCompleted=!viewCompleted" id="completed" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+          completed
+        </button></h2>
+        <div class="card">
+          <!-- TODO make the box replicable with 3 Status (done,pending,failed)-->
+          <ng-container *ngFor="let workout of goalWorkoutList">
+            <workout-short [workout]="workout"></workout-short>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="container top-right">
+      <div class="container">
+        <h2>List of goals:</h2>
+        <ng-container *ngFor="let goal of goalList">
+          <goal-short [goal] = "goal"></goal-short>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

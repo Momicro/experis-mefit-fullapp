@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-header">
+    <div class="md-form md-outline input-with-post-icon datepicker" id="customDays">
+      <input placeholder="Select date" type="text" id="Customization" class="form-control">
+      <label for="Customization">pick a starting date</label>
+      <i class="fas fa-calendar input-prefix" tabindex=0></i>
+    </div>
+    <button>Save the goal</button>
+  </div>
+  <div class="container body">
+    <!--TODO add suggestions to it-->
+    <h2 class="left">Programs:</h2>
+    <!-- TODO make the box replicable with 3 Status (done,pending,failed)-->
+    <program-short *ngFor="let program of programList" [program]="program"></program-short>
+    <h2 class="left">Workouts:</h2>
+    <!-- TODO make the box replicable with 3 Status (done,pending,failed)-->
+    <workout-short *ngFor="let workout of workoutList" [workout]="workout"></workout-short>
+    <h2 class="left">Exercises:</h2>
+    <!-- TODO make the box replicable with 3 Status (done,pending,failed)-->
+      <exercise-short *ngFor="let exercise of exerciseList" [exercise]="exercise"></exercise-short>
+    <div class="container top-right">
+      <div class="card">
+        <h2>Selected units:</h2>
+          <program-short *ngFor="let program of selectedProgramsList" [program] = "program"></program-short>
+          <workout-short  *ngFor="let workout of selectedWorkoutsList" [workout] = "workout"></workout-short>
+      </div>
+    </div>
+
+  </div>
+</div>

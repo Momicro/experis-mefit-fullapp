@@ -1,0 +1,19 @@
+
+.body {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+
+}
+
+.top-right {
+  grid-column: 3;
+  grid-row-start: 1;
+}
+
+h2 {
+  color: white;
+}
+
+h1 {
+  color: white;
+}

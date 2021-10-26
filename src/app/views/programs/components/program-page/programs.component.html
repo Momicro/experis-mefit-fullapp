@@ -1,0 +1,23 @@
+<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="container">
+  <div class="container">
+    <div class="header">
+      <h2>Programs:</h2>
+      <div class="tab-dropdown">
+        <button id="tab-dropbtn" class="tab-dropbtn">Sort by category</button>
+        <div class="tab-dropdown-content">
+          <ul>
+            <li (click)="sortByCategory($event)">all</li>
+            <li *ngFor="let category of programCategories" (click)="sortByCategory($event)" [value]=category>{{category}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <ng-container *ngFor="let program of filteredProgramList">
+      <program-short [program]="program"></program-short>
+    </ng-container>
+
+  </div>
+</div>

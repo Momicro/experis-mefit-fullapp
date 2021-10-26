@@ -1,0 +1,78 @@
+.card {
+  width:100%;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  border-radius: 5px;
+  backdrop-filter: blur(14px);
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  text-align: center;
+  display: inline;
+  float: left;
+}
+.header {
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+.left {
+  grid-column: 1;
+}
+.right {
+  grid-column: 2;
+}
+
+.profile-pic {
+  min-width: 150px;
+  max-width: 100%;
+  border-radius: 10px;
+  grid-row-start: 1;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.profile {
+  margin-right: 40px;
+}
+
+.container {
+  padding: 2px 7px;
+}
+
+.slider {
+  grid-column: 1;
+}
+.text-card{
+  display: grid;
+  grid-template-columns: 1% 96% 3%;
+  width: 95%
+}
+.icon-btn{
+  background-color:rgba(129, 124, 124, 0.2);
+  border-radius: 10px;
+}
+
+.slider {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-column: span 3;
+}
+
+.slider-headline {
+  grid-column: span 3;
+  font-weight: bold;
+  text-align: left;
+}
+
+.slider .right {
+  grid-column: 3;
+  text-align: right;
+}
+
+.slider .left {
+  grid-column: 1;
+  text-align: left;
+}
+
+input.contributor {
+  width: 20px;
+  height: 20px;
+}

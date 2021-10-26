@@ -1,0 +1,70 @@
+<form #profileForm="ngForm" (ngSubmit)="onSubmit()">
+
+<div class="card">
+  <div class="container header">
+    <div class="container">
+      <div class="card-header">
+        <h1>Profile</h1>
+      </div>
+      <div>
+        <label for="age">How old are you?</label><br>
+        <input type="number" min="8" max="100" name="age" id="age" [(ngModel)]="UserProfile.age" required>
+        <br><br>
+        <label for="height">How tall are you?</label><br>
+        <input type="number" min="100" max="250" name="height" id="height" [(ngModel)]="UserProfile.height">
+        <br><br>
+        <label for="weight">What do you weigh?</label><br>
+        <input type="number" min="25" max="300" name="weight" id="weight" [(ngModel)]="UserProfile.weight">
+      </div>      
+    </div>
+    <div class="container profile">
+      <img class="header profile-pic right" src="https://hddesktopwallpapers.in/wp-content/uploads/2015/09/camel-picture.jpg">
+    </div>
+  </div>
+  <div class="container body">
+    <div class="slider container">
+      <label class="slider-headline">What is your current fitnesslevel? ({{UserProfile.fitnessLevel}} %)</label>
+      <input type="range" min="1" max="100" class="slider" name="fitnessLevel" [(ngModel)]="UserProfile.fitnessLevel">
+      <label class="left">Couchpotatoe</label>
+      <label class="right">Expert</label>
+    </div>
+    <br>
+    <div class="slider container">
+      <label class="slider-headline">How often do you train? ({{UserProfile.trainingFrequency}} %)</label>
+      <input type="range" min="1" max="100" class="slider" name="trainingFrequency" [(ngModel)]="UserProfile.trainingFrequency">
+      <label class="left">Never</label>
+      <label class="right">Every day</label>
+    </div>
+  </div>
+
+  <div class="container" *ngIf="!this.hasRole('Contributor')">
+    <div class="contributor-btn container">
+      <input #contributorRequest
+      id="contributorRequest" 
+      type="checkbox" 
+      [checked]="UserProfile.contributorRequest" 
+      (change)="UserProfile.contributorRequest = contributorRequest.checked" />
+      &nbsp;<label>Request contributor rights</label>
+    </div>
+  </div>
+
+  <br />
+  <button type="submit" [disabled]="!profileForm.valid" style="width: 10em; font-weight: bold">Save</button>
+
+  <br /><br />
+  
+  
+  <div class="password-btn container" style="border: 1px solid black">
+    <legend>Account settings</legend>
+    <div>Name: {{UserFullName}}</div>
+    <div>User-ID: {{UserID}}</div>
+    <div>Profile-ID: {{ProfileID}}</div>
+    
+    <br>
+    <a [href]="LinkAccountManagementUrl" target="_blank">
+      <button type="button" class="password icon-btn"><i class="material-icons">lock</i></button>
+      <label style="margin-left: 5px">Manage account</label>
+    </a>
+  </div>
+</div>
+</form>
